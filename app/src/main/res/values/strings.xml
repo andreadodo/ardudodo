@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">ardudodo</string>
+    <string name="kitchen">Cucina</string>
+    <string name="bigBedroom">Camera da letto</string>
+    <string name="littleBedroom">Cameretta</string>
+    <string name="bathroom">Bagno</string>
+</resources>
