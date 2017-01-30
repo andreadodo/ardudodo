@@ -8,9 +8,38 @@
         android:textStyle="bold"
         android:textSize="20dp"
         android:textAlignment="center"
+        android:textColor="@color/redDark"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:id="@+id/tv_titolo_cameretta"
+        android:layout_weight="0.10" />
+
+    <Switch
+        android:text="@string/littleBedroom"
+        android:textStyle="bold"
+        android:textSize="20dp"
+        android:layout_marginTop="-125dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/switch_cameretta"
+        android:layout_weight="0.10"/>
+
+    <TextView
+        android:text="@string/seek_littlebedroom"
+        android:textStyle="bold"
+        android:textSize="20dp"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:id="@+id/tv_cameretta"
         android:layout_weight="0.10"/>
 
+    <SeekBar
+        style="@style/Widget.AppCompat.SeekBar.Discrete"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="-120dp"
+        android:max="100"
+        android:progress="10"
+        android:id="@+id/seekBar_cameretta"
+        android:layout_weight="0.10"/>
 </LinearLayout>
