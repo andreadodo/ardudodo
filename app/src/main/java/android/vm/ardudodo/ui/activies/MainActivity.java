@@ -18,7 +18,6 @@ public class MainActivity extends Activity {
     Button cameretta;
     Button bagno;
     Activity activity= this;
-    SeekBar seekbar;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

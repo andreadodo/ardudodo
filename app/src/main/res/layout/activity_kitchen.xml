@@ -5,10 +5,43 @@
     android:weightSum="1"
     android:orientation="vertical">
 
-    <Space
+    <TextView
+        android:text="@string/kitchen"
+        android:textStyle="bold"
+        android:textSize="20dp"
+        android:textAlignment="center"
+        android:textColor="@color/redDark"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:id="@+id/tv_titolo_cucina"
+        android:layout_weight="0.10"/>
+
+    <Switch
+        android:text="@string/switch_kitchen"
+        android:textStyle="bold"
+        android:textSize="20dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:id="@+id/switch_cucina"
         android:layout_weight="0.10" />
+
+    <Switch
+        android:text="@string/switch_box"
+        android:textStyle="bold"
+        android:textSize="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/switch_box"
+        android:layout_weight="0.10"/>
+
+    <TextView
+        android:text="@string/seek_name"
+        android:textStyle="bold"
+        android:textSize="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:id="@+id/tv_cucina"
+        android:layout_weight="0.10"/>
 
     <SeekBar
         style="@style/Widget.AppCompat.SeekBar.Discrete"
@@ -16,20 +49,39 @@
         android:layout_height="wrap_content"
         android:max="100"
         android:progress="10"
-        android:id="@+id/seekBar"
-        android:layout_weight="0.10" />
-
-    <Space
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="0.10" />
+        android:id="@+id/seekBar_cucina"
+        android:layout_weight="0.10"/>
 
     <Switch
-        android:text="Switch"
+        android:text="@string/switch_lobby"
+        android:textStyle="bold"
+        android:textSize="20dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/switch2"
-        android:layout_weight="0.10" />
+        android:id="@+id/switch_corridoio"
+        android:layout_weight="0.10"/>
+
+    <Space
+        android:layout_width="wrap_content"
+        android:layout_height="30dp" />
+
+    <TextView
+        android:text="@string/tv_temperature"
+        android:textStyle="bold"
+        android:textSize="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:id="@+id/tv_temperatura"
+        android:layout_weight="0.10"/>
+
+    <TextView
+        android:text="@string/tv_humidity"
+        android:textStyle="bold"
+        android:textSize="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:id="@+id/tv_umidita"
+        android:layout_weight="0.10"/>
 
 
 </LinearLayout>

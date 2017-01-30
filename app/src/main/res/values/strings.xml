@@ -4,4 +4,24 @@
     <string name="bigBedroom">Camera da letto</string>
     <string name="littleBedroom">Cameretta</string>
     <string name="bathroom">Bagno</string>
+    <string name="tv_paginaprincipale">by Andrea e Alessio</string>
+
+
+    <string name="switch_kitchen">CUCINA</string>
+    <string name="switch_box">BOX</string>
+    <string name="switch_lobby">CORRIDOIO</string>
+    <string name="seek_name">CUCINA:</string>
+    <string name="tv_temperature">TEMPERATURA</string>
+    <string name="tv_humidity">UMIDITA</string>
+
+
+    <string name="switch_bed">LETTO</string>
+    <string name="switch_bedsidetable_anna">COMODINO ANNA</string>
+    <string name="switch_bedsidetable_sergio">COMODINO SERGIO</string>
+    <string name="seek_left">SINISTRA:</string>
+    <string name="seek_right">DESTRA:</string>
+
+
+    <string name="switch_littlebedroom">CAMERETTA</string>
+    <string name="seek_littlebedroom">CAMERETTA:</string>
 </resources>

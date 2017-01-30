@@ -7,24 +7,41 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:id="@+id/cucina"
-    android:text="@string/kitchen"/>
+    android:text="@string/kitchen"
+    android:height="70dp"
+    android:textSize="25dp"/>
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/cameraLetto"
-        android:text="@string/bigBedroom"/>
+        android:text="@string/bigBedroom"
+        android:height="70dp"
+        android:textSize="25dp" />
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/cameretta"
-        android:text="@string/littleBedroom"/>
+        android:text="@string/littleBedroom"
+        android:height="70dp"
+        android:textSize="25dp" />
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/bagno"
-        android:text="@string/bathroom"/>
+        android:text="@string/bathroom"
+        android:height="70dp"
+        android:textSize="25dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tv_main"
+        android:text="@string/tv_paginaprincipale"
+        android:layout_margin="50dp"
+        android:layout_gravity="center"
+        android:textSize="25dp"/>
 
 </LinearLayout>

@@ -3,4 +3,77 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <TextView
+        android:text="@string/bigBedroom"
+        android:textStyle="bold"
+        android:textSize="20dp"
+        android:textAlignment="center"
+        android:textColor="@color/redDark"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:id="@+id/tv_titolo_cameraletto"
+        android:layout_weight="0.10"/>
+
+    <Switch
+        android:text="@string/switch_bed"
+        android:textStyle="bold"
+        android:textSize="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/switch_letto"
+        android:layout_weight="0.10"/>
+
+    <Switch
+        android:text="@string/switch_bedsidetable_anna"
+        android:textStyle="bold"
+        android:textSize="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/switch_comodino_anna"
+        android:layout_weight="0.10"/>
+
+    <Switch
+        android:text="@string/switch_bedsidetable_sergio"
+        android:textStyle="bold"
+        android:textSize="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/switch_comodino_sergio"
+        android:layout_weight="0.10"/>
+
+    <TextView
+        android:text="@string/seek_left"
+        android:textStyle="bold"
+        android:textSize="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:id="@+id/tv_sinistra"
+        android:layout_weight="0.10"/>
+
+    <SeekBar
+        style="@style/Widget.AppCompat.SeekBar.Discrete"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:max="100"
+        android:progress="10"
+        android:id="@+id/seekBar_sinistra"
+        android:layout_weight="0.10"/>
+
+    <TextView
+        android:text="@string/seek_right"
+        android:textStyle="bold"
+        android:textSize="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:id="@+id/tv_destra"
+        android:layout_weight="0.10"/>
+
+    <SeekBar
+        style="@style/Widget.AppCompat.SeekBar.Discrete"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:max="100"
+        android:progress="10"
+        android:id="@+id/seekBar_destra"
+        android:layout_weight="0.10"/>
 </LinearLayout>
