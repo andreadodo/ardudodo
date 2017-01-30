@@ -1,10 +1,10 @@
-package android.vm.ardudodo;
+package android.vm.ardudodo.ui.activies;
 
 import android.app.Activity;
-import android.app.Notification;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.vm.ardudodo.R;
 import android.widget.Button;
 
 /**
