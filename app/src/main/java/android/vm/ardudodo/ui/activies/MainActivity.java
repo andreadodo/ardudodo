@@ -51,9 +51,12 @@ public class MainActivity extends Activity {
         bagno.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                Intent intent4= new Intent(activity,BathroomActivity.class);
+                //TEST
+                //Intent intent4= new Intent(activity,BathroomActivity.class);
+                Intent intent4= new Intent(activity,ValueActivity.class);
                 startActivity(intent4);
             }
         });
+
     }
 }
