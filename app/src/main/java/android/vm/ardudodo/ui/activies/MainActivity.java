@@ -52,8 +52,8 @@ public class MainActivity extends Activity {
             @Override
             public void onClick(View v) {
                 //TEST
-                //Intent intent4= new Intent(activity,BathroomActivity.class);
-                Intent intent4= new Intent(activity,ValueActivity.class);
+                Intent intent4= new Intent(activity,BathroomActivity.class);
+                //Intent intent4= new Intent(activity,ValueActivity.class);
                 startActivity(intent4);
             }
         });

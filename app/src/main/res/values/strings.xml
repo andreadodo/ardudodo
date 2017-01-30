@@ -24,4 +24,10 @@
 
     <string name="switch_littlebedroom">CAMERETTA</string>
     <string name="seek_littlebedroom">CAMERETTA:</string>
+    
+    
+    <string name="switch_bathroom">BAGNO</string>
+    <string name="switch_wc">BAGNO WC</string>
+    <string name="switch_washbasin">LAVABO</string>
+    <string name="switch_fan">VENTOLA</string>
 </resources>

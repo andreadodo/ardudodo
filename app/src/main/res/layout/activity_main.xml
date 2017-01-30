@@ -4,12 +4,12 @@
     android:layout_height="match_parent">
 
     <Button
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:id="@+id/cucina"
-    android:text="@string/kitchen"
-    android:height="70dp"
-    android:textSize="25dp"/>
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/cucina"
+        android:text="@string/kitchen"
+        android:height="70dp"
+        android:textSize="25dp"/>
 
     <Button
         android:layout_width="match_parent"

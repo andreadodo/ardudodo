@@ -3,4 +3,52 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <TextView
+        android:text="@string/bathroom"
+        android:textStyle="bold"
+        android:textSize="20dp"
+        android:textAlignment="center"
+        android:textColor="@color/redDark"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:id="@+id/tv_titolo_bagno"
+        android:layout_weight="0.10"/>
+
+    <Switch
+        android:layout_marginTop="-60dp"
+        android:text="@string/switch_bathroom"
+        android:textStyle="bold"
+        android:textSize="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/switch_bagno"
+        android:layout_weight="0.10"/>
+
+    <Switch
+        android:text="@string/switch_wc"
+        android:textStyle="bold"
+        android:textSize="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/switch_wc"
+        android:layout_weight="0.10"/>
+
+    <Switch
+        android:text="@string/switch_washbasin"
+        android:textStyle="bold"
+        android:textSize="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/switch_lavabo"
+        android:layout_weight="0.10"/>
+
+    <Switch
+        android:text="@string/switch_fan"
+        android:textStyle="bold"
+        android:textSize="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/switch_ventola"
+        android:layout_weight="0.10"/>
+
 </LinearLayout>
