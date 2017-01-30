@@ -5,8 +5,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.vm.ardudodo.R;
+import android.vm.ardudodo.controllers.ValueActivity;
 import android.widget.Button;
-import android.widget.SeekBar;
 
 /**
  * Created by User on 26/01/2017.

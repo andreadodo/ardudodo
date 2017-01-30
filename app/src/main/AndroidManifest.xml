@@ -21,7 +21,7 @@
         <activity android:name=".ui.activies.BigBedroomActivity"> </activity>
         <activity android:name=".ui.activies.LittleBedroomActivity"> </activity>
         <activity android:name=".ui.activies.BathroomActivity"> </activity>
-        <activity android:name=".ui.activies.ValueActivity"> </activity>
+        <activity android:name=".controllers.ValueActivity"> </activity>
 
     </application>
 

@@ -1,4 +1,4 @@
-package android.vm.ardudodo.ui.activies;
+package android.vm.ardudodo.controllers;
 
 import android.app.Activity;
 import android.os.Bundle;
