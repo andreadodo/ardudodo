@@ -30,4 +30,5 @@
     <string name="switch_wc">BAGNO WC</string>
     <string name="switch_washbasin">LAVABO</string>
     <string name="switch_fan">VENTOLA</string>
+    <string name="settings">Impostazioni</string>
 </resources>

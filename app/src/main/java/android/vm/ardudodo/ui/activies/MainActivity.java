@@ -14,7 +14,7 @@ import android.widget.Button;
  */
 
 public class MainActivity extends Activity {
-    Button cucina, cameraLetto, cameretta, bagno;
+    Button cucina, cameraLetto, cameretta, bagno, impostazioni;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,6 +25,7 @@ public class MainActivity extends Activity {
         cameraLetto = (Button)findViewById(R.id.cameraLetto);
         cameretta = (Button)findViewById(R.id.cameretta);
         bagno = (Button)findViewById(R.id.bagno);
+        impostazioni = (Button)findViewById(R.id.settings);
 
         //BUTTON ON CLICK LISTENER
         cucina.setOnClickListener(new View.OnClickListener(){
@@ -48,8 +49,14 @@ public class MainActivity extends Activity {
         bagno.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                //TEST
                 startActivity(new Intent(MainActivity.this,BathroomActivity.class));
+            }
+        });
+        impostazioni.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                //TEST
+                startActivity(new Intent(MainActivity.this,SettingsActivity.class));
                 //startActivity(new Intent(MainActivity.this,ValueActivity.class));
             }
         });

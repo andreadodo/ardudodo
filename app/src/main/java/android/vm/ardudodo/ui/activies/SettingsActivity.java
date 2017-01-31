@@ -5,15 +5,14 @@ import android.os.Bundle;
 import android.vm.ardudodo.R;
 
 /**
- * Created by User on 27/01/2017.
+ * Created by andrea on 31/01/17.
  */
 
-public class KidRoomActivity extends Activity {
+public class SettingsActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_kidroom);
-
+        setContentView(R.layout.activity_settings);
 
     }
 }
