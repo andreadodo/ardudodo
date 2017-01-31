@@ -18,8 +18,8 @@
         </activity>
 
         <activity android:name=".ui.activies.KitchenActivity"> </activity>
-        <activity android:name=".ui.activies.BigBedroomActivity"> </activity>
-        <activity android:name=".ui.activies.LittleBedroomActivity"> </activity>
+        <activity android:name=".ui.activies.BedroomActivity"> </activity>
+        <activity android:name=".ui.activies.KidRoomActivity"> </activity>
         <activity android:name=".ui.activies.BathroomActivity"> </activity>
         <activity android:name=".controllers.ValueActivity"> </activity>
 

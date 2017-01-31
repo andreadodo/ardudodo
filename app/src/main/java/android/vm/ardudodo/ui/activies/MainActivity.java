@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.vm.ardudodo.R;
-import android.vm.ardudodo.controllers.ValueActivity;
 import android.widget.Button;
 
 /**
@@ -35,7 +34,7 @@ public class MainActivity extends Activity {
         cameraLetto.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                Intent intent2= new Intent(activity,BigBedroomActivity.class);
+                Intent intent2= new Intent(activity,BedroomActivity.class);
                 startActivity(intent2);
             }
         });
@@ -43,7 +42,7 @@ public class MainActivity extends Activity {
         cameretta.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                Intent intent3= new Intent(activity,LittleBedroomActivity.class);
+                Intent intent3= new Intent(activity,KidRoomActivity.class);
                 startActivity(intent3);
             }
         });
@@ -52,9 +51,12 @@ public class MainActivity extends Activity {
             @Override
             public void onClick(View v) {
                 //TEST
-                Intent intent4= new Intent(activity,BathroomActivity.class);
+
+                startActivity(new Intent(activity,BathroomActivity.class));
+
+                //Intent intent4= new Intent(activity,BathroomActivity.class);
                 //Intent intent4= new Intent(activity,ValueActivity.class);
-                startActivity(intent4);
+                //startActivity(intent4);
             }
         });
 

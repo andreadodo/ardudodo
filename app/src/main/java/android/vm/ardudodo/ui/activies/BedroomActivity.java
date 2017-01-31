@@ -8,7 +8,7 @@ import android.vm.ardudodo.R;
  * Created by User on 26/01/2017.
  */
 
-public class BigBedroomActivity extends Activity {
+public class BedroomActivity extends Activity {
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

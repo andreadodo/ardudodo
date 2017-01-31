@@ -42,4 +42,5 @@
         android:progress="10"
         android:id="@+id/seekBar_cameretta"
         android:layout_weight="0.10"/>
+
 </LinearLayout>

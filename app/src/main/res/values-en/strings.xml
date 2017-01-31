@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">ardudodo</string>
+    <string name="bathroom">Bathroom</string>
+    <string name="bigBedroom">Bedroom</string>
+    <string name="kitchen">Kitchen</string>
+    <string name="littleBedroom">Kid\'s Room</string>
+    <string name="seek_left">Left Rollerblind</string>
+    <string name="seek_name">Kitchen Light</string>
+    <string name="seek_right">Right Rollerblind</string>
+    <string name="seek_littlebedroom">Kid\'s Rollerblind</string>
+    <string name="switch_bathroom">Bathroom Light</string>
+    <string name="switch_bed">Bedroom Light</string>
+    <string name="switch_bedsidetable_anna">Night Light Anna</string>
+    <string name="switch_bedsidetable_sergio">Night Light Sergio</string>
+    <string name="switch_box">Box Light</string>
+    <string name="switch_fan">Extractor</string>
+</resources>
