@@ -50,6 +50,7 @@ public class ValueActivity extends Activity{
                             e.printStackTrace();
                         }
                         Log.d("JSON",jsonArray.toString());
+
                         Integer[] value = new Integer[jsonArray.length()];
 
                         for (int i = 0; i < jsonArray.length(); i++) {

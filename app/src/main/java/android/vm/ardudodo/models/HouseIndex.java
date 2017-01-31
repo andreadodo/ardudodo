@@ -6,6 +6,10 @@ package android.vm.ardudodo.models;
 
 public class HouseIndex {
 
+    //WEB
+    public static final String URL = "http://172.16.9.150:8888/ardudodo.php";
+
+    // PACCHETTO
     public static final int START = 0;
     public static final int CUCINA = 1;
     public static final int CUCINA_BOX = 2;

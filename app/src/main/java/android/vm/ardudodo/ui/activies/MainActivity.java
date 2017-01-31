@@ -49,8 +49,8 @@ public class MainActivity extends Activity {
             @Override
             public void onClick(View v) {
                 //TEST
-                //startActivity(new Intent(MainActivity.this,BathroomActivity.class));
-                startActivity(new Intent(MainActivity.this,ValueActivity.class));
+                startActivity(new Intent(MainActivity.this,BathroomActivity.class));
+                //startActivity(new Intent(MainActivity.this,ValueActivity.class));
             }
         });
     }

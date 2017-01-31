@@ -18,9 +18,9 @@ public class Kitchen {
 
         //Log.d("VALUE JSON",jsonValue.toString());
 
-        this.cucina = jsonValue.getBoolean(CUCINA);
-        this.cucinaBox = jsonValue.getBoolean(CUCINA_BOX);
-        this.corridoio = jsonValue.getBoolean(CORRIDOIO);
+        this.cucina = (jsonValue.getInt(CUCINA)!=0);
+        this.cucinaBox = (jsonValue.getInt(CUCINA_BOX)!=0);
+        this.corridoio = (jsonValue.getInt(CORRIDOIO)!=0);
         this.tapCucina = jsonValue.getInt(TAP_CUCINA);
         this.temperatura = jsonValue.getInt(TEMPERATURA);
         this.umidita = jsonValue.getInt(UMIDITA);
