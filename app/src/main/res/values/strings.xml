@@ -1,10 +1,10 @@
 <resources>
-    <string name="app_name">ardudodo</string>
+    <string name="app_name" translatable="false">Domotic Home ArduDodo</string>
     <string name="kitchen">Cucina</string>
     <string name="bigBedroom">Camera da letto</string>
     <string name="littleBedroom">Cameretta</string>
     <string name="bathroom">Bagno</string>
-    <string name="tv_paginaprincipale">by Andrea e Alessio</string>
+    <string name="tv_paginaprincipale" translatable="false">by Andrea e Alessio</string>
 
 
     <string name="switch_kitchen">CUCINA</string>
