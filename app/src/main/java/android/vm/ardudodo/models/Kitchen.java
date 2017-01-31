@@ -14,29 +14,16 @@ public class Kitchen {
     private boolean cucina, cucinaBox, corridoio;
     private int tapCucina, temperatura, umidita;
 
-    public Kitchen(JSONArray jsonValue) {
+    public Kitchen(JSONArray jsonValue) throws JSONException {
 
-        Log.d("VALUE JSON",jsonValue.toString());
+        //Log.d("VALUE JSON",jsonValue.toString());
 
-        Integer[] value = new Integer[jsonValue.length()];
-
-        for (int i = 0; i < jsonValue.length(); i++) {
-            try {
-                value[i] = jsonValue.getInt(i);
-            } catch (JSONException e) {
-                e.printStackTrace();
-            }
-        }
-
-        for (int i = 0; i < value.length; i++)
-            Log.d("VALUE [" + i + "]", String.valueOf(value[i]));
-
-        this.cucina = (value[CUCINA] != 0);
-        this.cucinaBox = (value[CUCINA_BOX] != 0);
-        this.corridoio = (value[CORRIDOIO] != 0);
-        this.tapCucina = value[TAP_CUCINA];
-        this.temperatura = value[TEMPERATURA];
-        this.umidita = value[UMIDITA];
+        this.cucina = jsonValue.getBoolean(CUCINA);
+        this.cucinaBox = jsonValue.getBoolean(CUCINA_BOX);
+        this.corridoio = jsonValue.getBoolean(CORRIDOIO);
+        this.tapCucina = jsonValue.getInt(TAP_CUCINA);
+        this.temperatura = jsonValue.getInt(TEMPERATURA);
+        this.umidita = jsonValue.getInt(UMIDITA);
     }
 
     public boolean getCucina() {
@@ -70,7 +57,16 @@ public class Kitchen {
     public void setTemperatura(int temperatura) {
         this.temperatura = temperatura;
     }
+
     public void setUmidita(int umidita) {
         this.umidita = umidita;
+    }
+
+    public int getTemperatura() {
+        return temperatura;
+    }
+
+    public int getUmidita() {
+        return umidita;
     }
 }
