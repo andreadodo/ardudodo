@@ -50,10 +50,10 @@ public class Rest extends Activity {
                         K room = null;
                         try {
                             room = (K) room.getInstance(response);
+                            callback.onSuccess(room);
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }
-                        callback.onSuccess(room);
 
                     }
                 },

@@ -17,7 +17,7 @@ import android.widget.TextView;
  */
 
 public class BathroomActivity extends Activity {
-    Switch switchBagno, switchWc, swithLavabo, SwitchVentola;
+    Switch switchBagno, switchWc, swithLavabo, switchVentola;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,7 +26,7 @@ public class BathroomActivity extends Activity {
         switchBagno = (Switch) findViewById(R.id.switch_bagno);
         switchWc = (Switch) findViewById(R.id.switch_wc);
         swithLavabo = (Switch) findViewById(R.id.switch_lavabo);
-        SwitchVentola = (Switch) findViewById(R.id.switch_ventola);
+        switchVentola = (Switch) findViewById(R.id.switch_ventola);
 
         switchBagno.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
@@ -52,7 +52,7 @@ public class BathroomActivity extends Activity {
             }
         });
 
-        SwitchVentola.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+        switchVentola.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton s, boolean isChecked) {
                 Log.d("SW ESTRATTORE", String.valueOf(isChecked));
@@ -75,7 +75,10 @@ public class BathroomActivity extends Activity {
         new Rest.ResponseCallback<Bathroom>() {
             @Override
             public void onSuccess(Bathroom room) {
-
+                switchBagno.setChecked(room.getBagno());
+                switchWc.setChecked(room.getWc());
+                swithLavabo.setChecked(room.getLavabo());
+                switchVentola.setChecked(room.getVentola());
             }
 
             @Override

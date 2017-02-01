@@ -22,8 +22,6 @@
         <activity android:name=".ui.activies.KidRoomActivity"> </activity>
         <activity android:name=".ui.activies.BathroomActivity"> </activity>
         <activity android:name=".ui.activies.SettingsActivity"> </activity>
-        <activity android:name=".controllers.ValueActivity"> </activity>
-        <activity android:name=".controllers.NewValueActivity"> </activity>
 
     </application>
 

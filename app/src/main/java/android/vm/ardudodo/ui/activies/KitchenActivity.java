@@ -66,14 +66,17 @@ public class KitchenActivity extends Activity {
             }
         });
 
-        temp.setText("10°C"); //TODO READ
-        umid.setText("30%");
+
 
 
         new Rest.ResponseCallback<Kitchen>() {
             @Override
             public void onSuccess(Kitchen room) {
-
+                switchCucina.setChecked(room.getCucina());
+                switchCorridoio.setChecked(room.getCorridoio());
+                seekBarCucina.setProgress(room.getTapCucina());
+                temp.setText(room.getTemperatura());
+                umid.setText(room.getUmidita());
             }
 
             @Override

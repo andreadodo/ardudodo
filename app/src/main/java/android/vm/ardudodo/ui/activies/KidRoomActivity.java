@@ -58,7 +58,8 @@ public class KidRoomActivity extends Activity {
         new Rest.ResponseCallback<KidRoom>() {
             @Override
             public void onSuccess(KidRoom room) {
-
+                switchCameretta.setChecked(room.getCameretta());
+                seekBarCameretta.setProgress(room.getTapCameretta());
             }
 
             @Override

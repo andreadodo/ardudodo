@@ -96,7 +96,11 @@ public class BedroomActivity extends Activity {
         new Rest.ResponseCallback<Bedroom>() {
             @Override
             public void onSuccess(Bedroom room) {
-
+                switchLetto.setChecked(room.getLetto());
+                switchComDx.setChecked(room.getComodinoDx());
+                switchComSx.setChecked(room.getComodinoSx());
+                seekBarDx.setProgress(room.getTapLettoDx());
+                seekBarSx.setProgress(room.getTapLettoSx());
             }
 
             @Override
