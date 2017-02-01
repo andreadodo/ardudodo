@@ -8,6 +8,16 @@ public class HouseIndex {
 
     //WEB
     public static final String URL = "http://172.16.9.150:8888/ardudodo.php";
+    public static final int NULL = 0;
+    public static final int ENQ = 5;
+    public static final int LGT = 17;
+    public static final int TAP = 18;
+    public static final int SEN = 19;
+    public static final int AUX = 20;
+    public static final int ON = 72;
+    public static final int OFF = 76;
+    public static final int RESET = 82;
+    public static final int VALUE = 86;
 
     // PACCHETTO
     public static final int START = 0;
