@@ -16,8 +16,8 @@ import android.widget.TextView;
 
 public class SettingsActivity extends Activity{
     EditText etCorDay, etCorNight, etDate, etTime;
-    TextView etLux, tvI2c;
-    SeekBar sbCorDay, sbCorNight, sbVentola;
+    TextView etLux, tvI2c, etVentola;
+    SeekBar sbCorDay, sbCorNight;
     Button btRstAll, btRstKitchen, btRstBdroomDx, btRstBdroomSx, btRstKidsroom;
 
 
@@ -28,7 +28,7 @@ public class SettingsActivity extends Activity{
 
         etCorDay = (EditText)findViewById(R.id.et_cor_day);
         etCorNight = (EditText)findViewById(R.id.et_cor_night);
-        sbVentola = (SeekBar)findViewById(R.id.sb_ventola);
+        etVentola = (EditText)findViewById(R.id.et_ventola);
         etDate = (EditText)findViewById(R.id.et_date);
         etTime = (EditText)findViewById(R.id.et_time);
         etLux = (TextView)findViewById(R.id.tv_lux);

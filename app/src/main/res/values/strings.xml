@@ -42,4 +42,15 @@
     <string name="intensity_night">INTENSITA:</string>
     <string name="bathroom_fan">VENTOLA BAGNO</string>
     <string name="min_auto_off">MIN. AUTO OFF</string>
+    <string name="date_time">DATA e ORA</string>
+    <string name="date">DATA:</string>
+    <string name="time">ORA</string>
+    <string name="luminosity">LUMINOSITA</string>
+    <string name="i2c">I2C</string>
+    <string name="reset_blinds">RESET TAPPARELLE</string>
+    <string name="reset_all">TUTTE</string>
+    <string name="reset_kitchen">CUCINA</string>
+    <string name="reset_bedLeft">LETTO SX</string>
+    <string name="reset_bedRight">LETTO DX</string>
+    <string name="reset_kidBedroom">CAMERETTA</string>
 </resources>
