@@ -35,6 +35,11 @@
 
     <string name="settings">Impostazioni</string>
     <string name="lights_day">LUCI CORTESIA MOD. GIORNO</string>
-    <string name="time_day">ORA</string>
-    <string name="intensity_day">INTENSITA</string>
+    <string name="time_day">ORA:</string>
+    <string name="intensity_day">INTENSITA:</string>
+    <string name="lights_night">LUCI CORTESIA MOD. NOTTE</string>
+    <string name="time_night">ORA:</string>
+    <string name="intensity_night">INTENSITA:</string>
+    <string name="bathroom_fan">VENTOLA BAGNO</string>
+    <string name="min_auto_off">MIN. AUTO OFF</string>
 </resources>

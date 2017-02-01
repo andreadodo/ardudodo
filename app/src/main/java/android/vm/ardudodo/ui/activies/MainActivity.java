@@ -57,8 +57,8 @@ public class MainActivity extends Activity {
             @Override
             public void onClick(View v) {
                 //TEST
-                //startActivity(new Intent(MainActivity.this,SettingsActivity.class));
-                startActivity(new Intent(MainActivity.this, NewValueActivity.class));
+                startActivity(new Intent(MainActivity.this,SettingsActivity.class));
+                //startActivity(new Intent(MainActivity.this, NewValueActivity.class));
             }
         });
     }
