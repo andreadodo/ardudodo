@@ -27,23 +27,25 @@ public class NewValueActivity extends Activity{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        fetchDataFromUdoo();
+        fetchDataFromUdoo(0,0);
         //  Log.d("")
 
     }
 
-    private void fetchDataFromUdoo() {
+
+    private void fetchDataFromUdoo(int id, int cmd) {
 
         //Init request queque
         RequestQueue queue = Volley.newRequestQueue(this);
 
         //Request a string response from the URL
-        StringRequest stringRequest = new StringRequest(Request.Method.GET, URL,
+        StringRequest stringRequest = new StringRequest(Request.Method.GET,
+                //URL + request
+                URL + "?id=" + String.valueOf(id) + "&cmd=" + String.valueOf(cmd),
                 new Response.Listener<String>(){
                     @Override
                     public void onResponse(String response){
                         JSONArray jsonArray = null;
-
                         Log.d("READ", response);
                         try {
                             jsonArray = new JSONArray(response);

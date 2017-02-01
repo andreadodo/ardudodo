@@ -26,7 +26,7 @@ public class SettingsActivity extends Activity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings);
 
-        etCorDay = (EditText)findViewById(R.id.et_cor_day);
+        etCorDay = (EditText)findViewById(R.id.et_cor_day1);
         etCorNight = (EditText)findViewById(R.id.et_cor_night);
         etVentola = (EditText)findViewById(R.id.et_ventola);
         etDate = (EditText)findViewById(R.id.et_date);

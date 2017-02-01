@@ -43,7 +43,7 @@ public class ValueActivity extends Activity{
                     public void onResponse(String response){
                         JSONArray jsonArray = null;
 
-                        Log.d("READ", response);
+                        //Log.d("READ", response);
                         try {
                             jsonArray = new JSONArray(response);
                         } catch (JSONException e) {
