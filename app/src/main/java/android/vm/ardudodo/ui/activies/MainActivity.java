@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.vm.ardudodo.R;
+import android.vm.ardudodo.controllers.NewValueActivity;
 import android.vm.ardudodo.controllers.ValueActivity;
 import android.widget.Button;
 
@@ -56,8 +57,8 @@ public class MainActivity extends Activity {
             @Override
             public void onClick(View v) {
                 //TEST
-                startActivity(new Intent(MainActivity.this,SettingsActivity.class));
-                //startActivity(new Intent(MainActivity.this,ValueActivity.class));
+                //startActivity(new Intent(MainActivity.this,SettingsActivity.class));
+                startActivity(new Intent(MainActivity.this, NewValueActivity.class));
             }
         });
     }
