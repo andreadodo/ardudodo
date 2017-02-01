@@ -2,6 +2,7 @@ package android.vm.ardudodo.ui.activies;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.util.Log;
 import android.vm.ardudodo.R;
 import android.widget.Button;
 import android.widget.EditText;
@@ -45,9 +46,6 @@ public class SettingsActivity extends Activity{
 
 
 
-
-        seekBarCucina = (SeekBar) findViewById(R.id.seekBar_cucina);
-        temp = (TextView) findViewById(R.id.tv_temperatura);
 
     }
 }
