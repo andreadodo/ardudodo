@@ -30,13 +30,12 @@ public class Rest extends Activity {
         context = c;
     }
 
-    public interface ResponseCallback<R extends Room> {
+    public interface ResponseCallback<R extends RoomInstance> {
         void onSuccess(R room);
-
         void onError(String message);
     }
 
-    public <K> void requestUdoo(int id, int cmd, final ResponseCallback<K> callback) {
+    public <K extends RoomInstance> void requestUdoo(int id, int cmd, final ResponseCallback<K> callback, final Class<K> type) {
 
         //Init request queque
         RequestQueue queue = Volley.newRequestQueue(context);
@@ -49,7 +48,7 @@ public class Rest extends Activity {
                     @Override
                     public void onResponse(JSONArray response) {
                         Log.d("JSON", response.toString());
-                        K room = RoomInstance.newInsance(Class<K> K.);
+                        K room = RoomInstance.newInsance(type,response);
 
                         // .getInstance(response);
                         //callback.onSuccess(room);

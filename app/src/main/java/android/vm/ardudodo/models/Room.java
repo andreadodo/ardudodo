@@ -11,10 +11,7 @@ import org.json.JSONException;
 
 public abstract class Room <R extends Room>{
 
-//    public K newInstance (JSONArray jsonArray) {
-//        return new K
-//    }
-
+/*
     public  Room<R> getInstance(R r,JSONArray jsonArray){
         try {
             return r.getClass().newInstance();
@@ -25,7 +22,7 @@ public abstract class Room <R extends Room>{
         }
         return null;
 
-    }
+    }*/
 
     //WEB
     public static final String URL = "http://172.16.9.150:8888/ardudodo.php";

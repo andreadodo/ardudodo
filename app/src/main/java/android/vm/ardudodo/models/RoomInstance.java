@@ -1,14 +1,20 @@
 package android.vm.ardudodo.models;
 
+import org.json.JSONArray;
+
 /**
  * Created by andrea on 01/02/17.
  */
 
 public class RoomInstance<K> extends Room {
 
-    public static  <K extends RoomInstance> K newInsance(K k){
+    JSONArray jsonArray;
+
+    public static <K extends RoomInstance> K newInsance(Class<K> k, JSONArray jsonArray) {
         try {
-            return (K)k.getClass().newInstance();
+            K k1 = k.newInstance();
+            k1.setData(jsonArray);
+            return k1;
         } catch (InstantiationException e) {
             e.printStackTrace();
         } catch (IllegalAccessException e) {
@@ -17,4 +23,8 @@ public class RoomInstance<K> extends Room {
         return null;
     }
 
+
+    public void setData(JSONArray data) {
+        this.jsonArray = data;
+    }
 }

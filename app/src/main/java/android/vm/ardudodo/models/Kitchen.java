@@ -9,12 +9,13 @@ import org.json.JSONException;
  * Created by andrea on 31/01/17.
  */
 
-public class Kitchen extends Room{
+public class Kitchen extends RoomInstance {
     private boolean cucina, cucinaBox, corridoio;
     private int tapCucina;
     private String temperatura, umidita;
 
-    public Kitchen(JSONArray jsonValue) {
+    @Override
+    public void setData(JSONArray jsonValue) {
         //Log.d("VALUE JSON",jsonValue.toString());
         try {
             this.cucina = (jsonValue.getInt(CUCINA)!=0);
@@ -26,6 +27,10 @@ public class Kitchen extends Room{
         } catch (JSONException e) {
             e.printStackTrace();
         }
+    }
+
+    public Kitchen(JSONArray jsonValue) {
+
 
     }
 

@@ -43,7 +43,7 @@ public class KitchenActivity extends Activity {
 
         super.onStart();
         rest = new Rest(this);
-        rest.requestUdoo(0,0, callback);
+        rest.requestUdoo(0,0, callback,Kitchen.class);
     }
 
     protected void onCreate(Bundle savedInstanceState) {
