@@ -31,9 +31,9 @@ public class Bathroom extends Room{
         return ventola;
     }
 
-    @Override
+   /* @Override
     public <T extends Room> Room getInstance(JSONArray jsonArray) throws JSONException {
         return new Bathroom(jsonArray);
 
-    }
+    }*/
 }

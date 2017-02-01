@@ -11,7 +11,8 @@ import org.json.JSONException;
 
 public class Kitchen extends Room{
     private boolean cucina, cucinaBox, corridoio;
-    private int tapCucina, temperatura, umidita;
+    private int tapCucina;
+    private String temperatura, umidita;
 
     public Kitchen(JSONArray jsonValue) {
         //Log.d("VALUE JSON",jsonValue.toString());
@@ -20,8 +21,8 @@ public class Kitchen extends Room{
             this.cucinaBox = (jsonValue.getInt(CUCINA_BOX)!=0);
             this.corridoio = (jsonValue.getInt(CORRIDOIO)!=0);
             this.tapCucina = jsonValue.getInt(TAP_CUCINA);
-            this.temperatura = jsonValue.getInt(TEMPERATURA);
-            this.umidita = jsonValue.getInt(UMIDITA);
+            this.temperatura = jsonValue.getString(TEMPERATURA)+"°C";
+            this.umidita = jsonValue.getString(UMIDITA)+"%";
         } catch (JSONException e) {
             e.printStackTrace();
         }
@@ -56,25 +57,18 @@ public class Kitchen extends Room{
         this.tapCucina = tapCucina;
     }
 
-    public void setTemperatura(int temperatura) {
-        this.temperatura = temperatura;
-    }
 
-    public void setUmidita(int umidita) {
-        this.umidita = umidita;
-    }
-
-    public int getTemperatura() {
+    public String getTemperatura() {
         return temperatura;
     }
 
-    public int getUmidita() {
+    public String getUmidita() {
         return umidita;
     }
 
 
-    @Override
+   /* @Override
     public <T extends Room> Room getInstance(JSONArray jsonArray) {
         return new Kitchen(jsonArray);
-    }
+    }*/
 }

@@ -24,9 +24,9 @@ public class KidRoom extends Room{
         return tapCameretta;
     }
 
-    @Override
+   /* @Override
     public <T extends Room> Room getInstance(JSONArray jsonArray) {
         return new Kitchen(jsonArray);
 
-    }
+    }*/
 }

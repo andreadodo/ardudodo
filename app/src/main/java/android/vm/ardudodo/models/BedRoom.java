@@ -37,9 +37,9 @@ public class Bedroom extends Room{
         return tapLettoSx;
     }
 
-    @Override
-    public <T extends Room> Room getInstance(JSONArray jsonArray) {
-        return new Kitchen(jsonArray);
-
-    }
+//    @Override
+//    public <T extends Room> Room getInstance(JSONArray jsonArray) {
+//        return new Kitchen(jsonArray);
+//
+//    }
 }

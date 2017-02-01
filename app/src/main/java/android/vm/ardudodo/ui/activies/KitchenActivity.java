@@ -10,15 +10,41 @@ import android.widget.CompoundButton;
 import android.widget.SeekBar;
 import android.widget.Switch;
 import android.widget.TextView;
+import android.widget.Toast;
 
 /**
- * Created by User on 26/01/2017.
+ * Created by Andrea on 26/01/2017.
  */
 
 public class KitchenActivity extends Activity {
     Switch switchCucina, switchCorridoio;
     SeekBar seekBarCucina;
     TextView temp, umid;
+
+    Rest rest;
+    Rest.ResponseCallback<Kitchen> callback =  new Rest.ResponseCallback<Kitchen>() {
+        @Override
+        public void onSuccess(Kitchen room) {
+            switchCucina.setChecked(room.getCucina());
+            switchCorridoio.setChecked(room.getCorridoio());
+            seekBarCucina.setProgress(room.getTapCucina());
+            temp.setText(room.getTemperatura());
+            umid.setText(room.getUmidita());
+        }
+
+        @Override
+        public void onError(String message) {
+            Toast.makeText(KitchenActivity.this, message, Toast.LENGTH_LONG).show();
+        }
+    };
+
+    @Override
+    protected void onStart() {
+
+        super.onStart();
+        rest = new Rest(this);
+        rest.requestUdoo(0,0, callback);
+    }
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,7 +60,7 @@ public class KitchenActivity extends Activity {
             @Override
             public void onCheckedChanged(CompoundButton s, boolean isChecked) {
                 Log.d("SW CUCINA", String.valueOf(isChecked));
-                // TODO SEND TO PHP
+                //         rest.requestUdoo(0,0, callback )TODO SEND TO PHP
             }
         });
 
@@ -67,23 +93,6 @@ public class KitchenActivity extends Activity {
         });
 
 
-
-
-        new Rest.ResponseCallback<Kitchen>() {
-            @Override
-            public void onSuccess(Kitchen room) {
-                switchCucina.setChecked(room.getCucina());
-                switchCorridoio.setChecked(room.getCorridoio());
-                seekBarCucina.setProgress(room.getTapCucina());
-                temp.setText(room.getTemperatura());
-                umid.setText(room.getUmidita());
-            }
-
-            @Override
-            public void onError(String message) {
-
-            }
-        };
 
     }
 }

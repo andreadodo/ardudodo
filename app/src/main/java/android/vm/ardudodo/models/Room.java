@@ -1,5 +1,7 @@
 package android.vm.ardudodo.models;
 
+import android.vm.ardudodo.R;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 
@@ -7,22 +9,26 @@ import org.json.JSONException;
  * Created by andrea on 01/02/17.
  */
 
-public abstract class Room {
+public abstract class Room <R extends Room>{
 
-    public abstract <T extends Room> Room getInstance(JSONArray jsonArray) throws JSONException;
+//    public K newInstance (JSONArray jsonArray) {
+//        return new K
+//    }
+
+    public  Room<R> getInstance(R r,JSONArray jsonArray){
+        try {
+            return r.getClass().newInstance();
+        } catch (InstantiationException e) {
+            e.printStackTrace();
+        } catch (IllegalAccessException e) {
+            e.printStackTrace();
+        }
+        return null;
+
+    }
 
     //WEB
     public static final String URL = "http://172.16.9.150:8888/ardudodo.php";
-    public static final int NULL = 0;
-    public static final int ENQ = 5;
-    public static final int LGT = 17;
-    public static final int TAP = 18;
-    public static final int SEN = 19;
-    public static final int AUX = 20;
-    public static final int ON = 72;
-    public static final int OFF = 76;
-    public static final int RESET = 82;
-    public static final int VALUE = 86;
 
     // PACCHETTO
     public static final int START = 0;
@@ -61,4 +67,6 @@ public abstract class Room {
     public static final int MM_ORA = 33;
     public static final int SS_ORA = 34;
     public static final int STOP = 35;
+
+
 }

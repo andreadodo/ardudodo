@@ -5,6 +5,7 @@ import android.content.Context;
 import android.util.Log;
 import android.vm.ardudodo.models.Kitchen;
 import android.vm.ardudodo.models.Room;
+import android.vm.ardudodo.models.RoomInstance;
 
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
@@ -31,15 +32,16 @@ public class Rest extends Activity {
 
     public interface ResponseCallback<R extends Room> {
         void onSuccess(R room);
+
         void onError(String message);
     }
 
-    public <K extends Room> void fetchDataFromUdoo(int id, int cmd, final ResponseCallback<K> callback) {
+    public <K> void requestUdoo(int id, int cmd, final ResponseCallback<K> callback) {
 
         //Init request queque
         RequestQueue queue = Volley.newRequestQueue(context);
 
-        JsonArrayRequest jsonRequest = new JsonArrayRequest(
+        final JsonArrayRequest jsonRequest = new JsonArrayRequest(
                 //URL + ID + CMD
                 URL + "?id=" + String.valueOf(id) + "&cmd=" + String.valueOf(cmd),
 
@@ -47,13 +49,10 @@ public class Rest extends Activity {
                     @Override
                     public void onResponse(JSONArray response) {
                         Log.d("JSON", response.toString());
-                        K room = null;
-                        try {
-                            room = (K) room.getInstance(response);
-                            callback.onSuccess(room);
-                        } catch (JSONException e) {
-                            e.printStackTrace();
-                        }
+                        K room = RoomInstance.newInsance(Class<K> K.);
+
+                        // .getInstance(response);
+                        //callback.onSuccess(room);
 
                     }
                 },

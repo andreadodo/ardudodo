@@ -57,8 +57,8 @@ public class Settings extends Room{
         return i2c;
     }
 
-    @Override
+    /*@Override
     public <T extends Room> Room getInstance(JSONArray jsonArray) throws JSONException {
         return new Settings(jsonArray);
-    }
+    }*/
 }
