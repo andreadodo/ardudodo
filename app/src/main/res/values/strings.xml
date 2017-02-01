@@ -30,5 +30,11 @@
     <string name="switch_wc">BAGNO WC</string>
     <string name="switch_washbasin">LAVABO</string>
     <string name="switch_fan">VENTOLA</string>
+
+
+
     <string name="settings">Impostazioni</string>
+    <string name="lights_day">LUCI CORTESIA MOD. GIORNO</string>
+    <string name="time_day">ORA</string>
+    <string name="intensity_day">INTENSITA</string>
 </resources>
