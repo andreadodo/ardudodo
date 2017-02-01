@@ -4,6 +4,9 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.util.Log;
 import android.vm.ardudodo.R;
+import android.vm.ardudodo.controllers.Rest;
+import android.vm.ardudodo.models.Bathroom;
+import android.vm.ardudodo.models.Kitchen;
 import android.widget.CompoundButton;
 import android.widget.SeekBar;
 import android.widget.Switch;
@@ -57,5 +60,28 @@ public class BathroomActivity extends Activity {
             }
         });
 
+        new Rest.ResponseCallback<Bathroom>() {
+            @Override
+            public void onSuccess(Bathroom room) {
+
+            }
+
+            @Override
+            public void onError(String message) {
+
+            }
+        };
+
+        new Rest.ResponseCallback<Bathroom>() {
+            @Override
+            public void onSuccess(Bathroom room) {
+
+            }
+
+            @Override
+            public void onError(String message) {
+
+            }
+        };
     }
 }

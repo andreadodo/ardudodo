@@ -3,13 +3,12 @@ package android.vm.ardudodo.models;
 import org.json.JSONArray;
 import org.json.JSONException;
 
-import static android.vm.ardudodo.models.HouseIndex.*;
 
 /**
  * Created by andrea on 01/02/17.
  */
 
-public class Settings {
+public class Settings extends Room{
     private String oraGiorno, oraNotte, oraVentola, ora, data;
     private int intGiorno, intNotte,lux, i2c;
 
@@ -56,5 +55,10 @@ public class Settings {
     }
     public int getI2c() {
         return i2c;
+    }
+
+    @Override
+    public <T extends Room> Room getInstance(JSONArray jsonArray) throws JSONException {
+        return new Settings(jsonArray);
     }
 }

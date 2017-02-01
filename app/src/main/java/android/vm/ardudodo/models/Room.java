@@ -1,10 +1,15 @@
 package android.vm.ardudodo.models;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+
 /**
- * Created by andrea on 30/01/17.
+ * Created by andrea on 01/02/17.
  */
 
-public class HouseIndex {
+public abstract class Room {
+
+    public abstract <T extends Room> Room getInstance(JSONArray jsonArray) throws JSONException;
 
     //WEB
     public static final String URL = "http://172.16.9.150:8888/ardudodo.php";
@@ -56,5 +61,4 @@ public class HouseIndex {
     public static final int MM_ORA = 33;
     public static final int SS_ORA = 34;
     public static final int STOP = 35;
-
 }

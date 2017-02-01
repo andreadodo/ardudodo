@@ -4,26 +4,28 @@ import android.util.Log;
 import org.json.JSONArray;
 import org.json.JSONException;
 
-import static android.vm.ardudodo.models.HouseIndex.*;
 
 /**
  * Created by andrea on 31/01/17.
  */
 
-public class Kitchen {
+public class Kitchen extends Room{
     private boolean cucina, cucinaBox, corridoio;
     private int tapCucina, temperatura, umidita;
 
-    public Kitchen(JSONArray jsonValue) throws JSONException {
-
+    public Kitchen(JSONArray jsonValue) {
         //Log.d("VALUE JSON",jsonValue.toString());
+        try {
+            this.cucina = (jsonValue.getInt(CUCINA)!=0);
+            this.cucinaBox = (jsonValue.getInt(CUCINA_BOX)!=0);
+            this.corridoio = (jsonValue.getInt(CORRIDOIO)!=0);
+            this.tapCucina = jsonValue.getInt(TAP_CUCINA);
+            this.temperatura = jsonValue.getInt(TEMPERATURA);
+            this.umidita = jsonValue.getInt(UMIDITA);
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
 
-        this.cucina = (jsonValue.getInt(CUCINA)!=0);
-        this.cucinaBox = (jsonValue.getInt(CUCINA_BOX)!=0);
-        this.corridoio = (jsonValue.getInt(CORRIDOIO)!=0);
-        this.tapCucina = jsonValue.getInt(TAP_CUCINA);
-        this.temperatura = jsonValue.getInt(TEMPERATURA);
-        this.umidita = jsonValue.getInt(UMIDITA);
     }
 
     public boolean getCucina() {
@@ -68,5 +70,11 @@ public class Kitchen {
 
     public int getUmidita() {
         return umidita;
+    }
+
+
+    @Override
+    public <T extends Room> Room getInstance(JSONArray jsonArray) {
+        return new Kitchen(jsonArray);
     }
 }

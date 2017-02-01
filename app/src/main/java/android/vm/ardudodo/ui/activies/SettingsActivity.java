@@ -4,6 +4,9 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.util.Log;
 import android.vm.ardudodo.R;
+import android.vm.ardudodo.controllers.Rest;
+import android.vm.ardudodo.models.Kitchen;
+import android.vm.ardudodo.models.Settings;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.SeekBar;
@@ -26,7 +29,7 @@ public class SettingsActivity extends Activity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings);
 
-        etCorDay = (EditText)findViewById(R.id.et_cor_day1);
+        etCorDay = (EditText)findViewById(R.id.et_cor_day);
         etCorNight = (EditText)findViewById(R.id.et_cor_night);
         etVentola = (EditText)findViewById(R.id.et_ventola);
         etDate = (EditText)findViewById(R.id.et_date);
@@ -45,7 +48,17 @@ public class SettingsActivity extends Activity{
 
 
 
+        new Rest.ResponseCallback<Settings>() {
+            @Override
+            public void onSuccess(Settings room) {
 
+            }
+
+            @Override
+            public void onError(String message) {
+
+            }
+        };
 
     }
 }

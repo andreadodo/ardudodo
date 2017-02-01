@@ -4,6 +4,9 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.util.Log;
 import android.vm.ardudodo.R;
+import android.vm.ardudodo.controllers.Rest;
+import android.vm.ardudodo.models.Bedroom;
+import android.vm.ardudodo.models.Kitchen;
 import android.widget.CompoundButton;
 import android.widget.SeekBar;
 import android.widget.Switch;
@@ -90,5 +93,16 @@ public class BedroomActivity extends Activity {
             }
         });
 
+        new Rest.ResponseCallback<Bedroom>() {
+            @Override
+            public void onSuccess(Bedroom room) {
+
+            }
+
+            @Override
+            public void onError(String message) {
+
+            }
+        };
     }
 }

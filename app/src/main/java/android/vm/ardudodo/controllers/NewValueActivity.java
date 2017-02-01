@@ -15,7 +15,7 @@ import com.android.volley.toolbox.Volley;
 import org.json.JSONArray;
 import org.json.JSONException;
 
-import static android.vm.ardudodo.models.HouseIndex.URL;
+import static android.vm.ardudodo.models.Room.URL;
 
 
 /**

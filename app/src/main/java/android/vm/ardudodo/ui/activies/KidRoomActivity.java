@@ -4,6 +4,9 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.util.Log;
 import android.vm.ardudodo.R;
+import android.vm.ardudodo.controllers.Rest;
+import android.vm.ardudodo.models.KidRoom;
+import android.vm.ardudodo.models.Kitchen;
 import android.widget.CompoundButton;
 import android.widget.SeekBar;
 import android.widget.Switch;
@@ -52,5 +55,16 @@ public class KidRoomActivity extends Activity {
             }
         });
 
+        new Rest.ResponseCallback<KidRoom>() {
+            @Override
+            public void onSuccess(KidRoom room) {
+
+            }
+
+            @Override
+            public void onError(String message) {
+
+            }
+        };
     }
 }

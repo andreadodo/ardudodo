@@ -3,6 +3,8 @@ package android.vm.ardudodo.controllers;
 import android.app.Activity;
 import android.content.Context;
 import android.util.Log;
+import android.vm.ardudodo.models.Kitchen;
+import android.vm.ardudodo.models.Room;
 
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
@@ -11,8 +13,9 @@ import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.Volley;
 
 import org.json.JSONArray;
+import org.json.JSONException;
 
-import static android.vm.ardudodo.models.HouseIndex.URL;
+import static android.vm.ardudodo.models.Room.URL;
 
 /**
  * Created by andrea on 01/02/17.
@@ -26,12 +29,12 @@ public class Rest extends Activity {
         context = c;
     }
 
-    public interface ResponseCallback {
-        void onSuccess(JSONArray jsonArray);
+    public interface ResponseCallback<R extends Room> {
+        void onSuccess(R room);
         void onError(String message);
     }
 
-    public void fetchDataFromUdoo(int id, int cmd, final ResponseCallback callback) {
+    public <K extends Room> void fetchDataFromUdoo(int id, int cmd, final ResponseCallback<K> callback) {
 
         //Init request queque
         RequestQueue queue = Volley.newRequestQueue(context);
@@ -44,7 +47,14 @@ public class Rest extends Activity {
                     @Override
                     public void onResponse(JSONArray response) {
                         Log.d("JSON", response.toString());
-                        callback.onSuccess(response);
+                        K room = null;
+                        try {
+                            room = (K) room.getInstance(response);
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                        callback.onSuccess(room);
+
                     }
                 },
 

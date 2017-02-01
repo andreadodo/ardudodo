@@ -3,13 +3,12 @@ package android.vm.ardudodo.models;
 import org.json.JSONArray;
 import org.json.JSONException;
 
-import static android.vm.ardudodo.models.HouseIndex.*;
 
 /**
  * Created by andrea on 31/01/17.
  */
 
-public class Bathroom {
+public class Bathroom extends Room{
     private boolean bagno, wc, lavabo, ventola;
 
     public Bathroom(JSONArray jsonArray) throws JSONException {
@@ -30,5 +29,11 @@ public class Bathroom {
     }
     public boolean getVentola() {
         return ventola;
+    }
+
+    @Override
+    public <T extends Room> Room getInstance(JSONArray jsonArray) throws JSONException {
+        return new Bathroom(jsonArray);
+
     }
 }

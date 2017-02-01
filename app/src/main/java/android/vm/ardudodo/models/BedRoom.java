@@ -3,13 +3,12 @@ package android.vm.ardudodo.models;
 import org.json.JSONArray;
 import org.json.JSONException;
 
-import static android.vm.ardudodo.models.HouseIndex.*;
 
 /**
  * Created by andrea on 30/01/17.
  */
 
-public class Bedroom {
+public class Bedroom extends Room{
     private boolean letto, comodinoDx, comodinoSx;
     private int tapLettoDx, tapLettoSx;
 
@@ -36,5 +35,11 @@ public class Bedroom {
     }
     public int getTapLettoSx() {
         return tapLettoSx;
+    }
+
+    @Override
+    public <T extends Room> Room getInstance(JSONArray jsonArray) {
+        return new Kitchen(jsonArray);
+
     }
 }

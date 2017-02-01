@@ -4,6 +4,8 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.util.Log;
 import android.vm.ardudodo.R;
+import android.vm.ardudodo.controllers.Rest;
+import android.vm.ardudodo.models.Kitchen;
 import android.widget.CompoundButton;
 import android.widget.SeekBar;
 import android.widget.Switch;
@@ -66,6 +68,19 @@ public class KitchenActivity extends Activity {
 
         temp.setText("10°C"); //TODO READ
         umid.setText("30%");
+
+
+        new Rest.ResponseCallback<Kitchen>() {
+            @Override
+            public void onSuccess(Kitchen room) {
+
+            }
+
+            @Override
+            public void onError(String message) {
+
+            }
+        };
 
     }
 }
