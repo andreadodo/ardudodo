@@ -78,7 +78,7 @@ public class BathroomActivity extends Activity {
                 switchBagno.setChecked(room.getBagno());
                 switchWc.setChecked(room.getWc());
                 swithLavabo.setChecked(room.getLavabo());
-                switchVentola.setChecked(room.getVentola());
+                switchVentola.setChecked(room.getVentola());4
             }
 
             @Override
