@@ -8,14 +8,20 @@ import org.json.JSONException;
  * Created by andrea on 31/01/17.
  */
 
-public class KidRoom extends Room{
+public class KidRoom extends RoomInstance{
     private boolean cameretta;
     private int tapCameretta;
-
-    public KidRoom(JSONArray jsonValue) throws JSONException {
-        this.cameretta = (jsonValue.getInt(CAMERETTA)!=0);
-        this.tapCameretta = jsonValue.getInt(TAP_CAMERETTA);
+    @Override
+    public void setData(JSONArray jsonValue) {
+        //Log.d("VALUE JSON",jsonValue.toString());
+        try {
+            this.cameretta = (jsonValue.getInt(CAMERETTA)!=0);
+            this.tapCameretta = jsonValue.getInt(TAP_CAMERETTA);
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
     }
+    public KidRoom(JSONArray jsonValue) { }
 
     public boolean getCameretta() {
         return cameretta;

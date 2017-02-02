@@ -8,22 +8,29 @@ import org.json.JSONException;
  * Created by andrea on 01/02/17.
  */
 
-public class Settings extends Room{
+public class Settings extends RoomInstance{
     private String oraGiorno, oraNotte, oraVentola, ora, data;
     private int intGiorno, intNotte,lux, i2c;
 
-    public Settings(JSONArray jsonArray) throws JSONException {
-
-        this.oraGiorno = jsonArray.getString(HH_GIORNO)+":"+jsonArray.getString(MM_GIORNO);
-        this.oraNotte = jsonArray.getString(HH_NOTTE)+":"+jsonArray.getString(MM_NOTTE);
-        this.oraVentola = jsonArray.getString(MM_VENTOLA)+":"+jsonArray.getString(SS_VENTOLA);
-        this.ora = jsonArray.getString(HH_ORA)+":"+jsonArray.getString(MM_ORA)+":"+jsonArray.getString(SS_ORA);
-        this.data = jsonArray.getString(GG_DATA)+"/"+jsonArray.getString(MM_DATA)+"/"+jsonArray.getString(AA_DATA);
-        this.intGiorno = jsonArray.getInt(INT_GIORNO);
-        this.intNotte = jsonArray.getInt(INT_NOTTE);
-        this.i2c = jsonArray.getInt(ERROR_I2C);
-        this.lux = jsonArray.getInt(LUMINOSITA);
+    @Override
+    public void setData(JSONArray jsonValue) {
+        //Log.d("VALUE JSON",jsonValue.toString());
+        try {
+            this.oraGiorno = jsonArray.getString(HH_GIORNO)+":"+jsonArray.getString(MM_GIORNO);
+            this.oraNotte = jsonArray.getString(HH_NOTTE)+":"+jsonArray.getString(MM_NOTTE);
+            this.oraVentola = jsonArray.getString(MM_VENTOLA)+":"+jsonArray.getString(SS_VENTOLA);
+            this.ora = jsonArray.getString(HH_ORA)+":"+jsonArray.getString(MM_ORA)+":"+jsonArray.getString(SS_ORA);
+            this.data = jsonArray.getString(GG_DATA)+"/"+jsonArray.getString(MM_DATA)+"/"+jsonArray.getString(AA_DATA);
+            this.intGiorno = jsonArray.getInt(INT_GIORNO);
+            this.intNotte = jsonArray.getInt(INT_NOTTE);
+            this.i2c = jsonArray.getInt(ERROR_I2C);
+            this.lux = jsonArray.getInt(LUMINOSITA);
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
     }
+
+    public Settings(JSONArray jsonArray) throws JSONException { }
 
     public String getOraGiorno() {
         return oraGiorno;

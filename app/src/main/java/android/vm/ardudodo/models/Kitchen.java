@@ -29,10 +29,7 @@ public class Kitchen extends RoomInstance {
         }
     }
 
-    public Kitchen(JSONArray jsonValue) {
-
-
-    }
+    public Kitchen(JSONArray jsonValue) { }
 
     public boolean getCucina() {
         return cucina;
