@@ -8,11 +8,11 @@ import org.json.JSONException;
  * Created by andrea on 31/01/17.
  */
 
-public class KidRoom extends RoomInstance{
+public class Kidroom extends Room{
     private boolean cameretta;
     private int tapCameretta;
-    @Override
-    public void setData(JSONArray jsonValue) {
+
+    public Kidroom(JSONArray jsonValue) {
         //Log.d("VALUE JSON",jsonValue.toString());
         try {
             this.cameretta = (jsonValue.getInt(CAMERETTA)!=0);
@@ -21,7 +21,6 @@ public class KidRoom extends RoomInstance{
             e.printStackTrace();
         }
     }
-    public KidRoom(JSONArray jsonValue) { }
 
     public boolean getCameretta() {
         return cameretta;

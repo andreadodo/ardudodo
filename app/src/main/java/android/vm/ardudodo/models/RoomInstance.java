@@ -5,7 +5,7 @@ import org.json.JSONArray;
 /**
  * Created by andrea on 01/02/17.
  */
-
+/*
 public class RoomInstance<K> extends Room {
 
     JSONArray jsonArray;
@@ -28,3 +28,4 @@ public class RoomInstance<K> extends Room {
         this.jsonArray = data;
     }
 }
+*/

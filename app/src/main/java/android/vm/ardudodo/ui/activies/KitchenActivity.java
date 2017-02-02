@@ -4,13 +4,13 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.util.Log;
 import android.vm.ardudodo.R;
+import android.vm.ardudodo.controllers.KitchenController;
 import android.vm.ardudodo.controllers.Rest;
 import android.vm.ardudodo.models.Kitchen;
 import android.widget.CompoundButton;
 import android.widget.SeekBar;
 import android.widget.Switch;
 import android.widget.TextView;
-import android.widget.Toast;
 
 /**
  * Created by Andrea on 26/01/2017.
@@ -21,29 +21,26 @@ public class KitchenActivity extends Activity {
     SeekBar seekBarCucina;
     TextView temp, umid;
 
-    Rest rest;
-    Rest.ResponseCallback<Kitchen> callback =  new Rest.ResponseCallback<Kitchen>() {
-        @Override
-        public void onSuccess(Kitchen room) {
-            switchCucina.setChecked(room.getCucina());
-            switchCorridoio.setChecked(room.getCorridoio());
-            seekBarCucina.setProgress(room.getTapCucina());
-            temp.setText(room.getTemperatura());
-            umid.setText(room.getUmidita());
-        }
-
-        @Override
-        public void onError(String message) {
-            Toast.makeText(KitchenActivity.this, message, Toast.LENGTH_LONG).show();
-        }
-    };
-
     @Override
     protected void onStart() {
-
         super.onStart();
-        rest = new Rest(this);
-        rest.requestUdoo(0,0, callback,Kitchen.class);
+        new KitchenController(this).fetchDataFromUdoo(0, 0,
+                new Rest.ResponseCallback<Kitchen>() {
+                    @Override
+                    public void onSuccess(Kitchen room) {
+                        switchCucina.setChecked(room.getCucina());
+                        switchCorridoio.setChecked(room.getCorridoio());
+                        seekBarCucina.setProgress(room.getTapCucina());
+                        temp.setText(room.getTemperatura());
+                        umid.setText(room.getUmidita());
+                    }
+
+                    @Override
+                    public void onError(String message) {
+
+                    }
+                }
+        );
     }
 
     protected void onCreate(Bundle savedInstanceState) {
@@ -74,16 +71,18 @@ public class KitchenActivity extends Activity {
 
         seekBarCucina.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             int val;
+
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
                 progress = progress / 10; //TODO IMPROVE USER EXPERIENCE
                 progress = progress * 10;
-                val=progress;
-               // seekBar.incrementProgressBy(1);
+                val = progress;
+                // seekBar.incrementProgressBy(1);
             }
 
             @Override
-            public void onStartTrackingTouch(SeekBar seekBar) { }
+            public void onStartTrackingTouch(SeekBar seekBar) {
+            }
 
             @Override
             public void onStopTrackingTouch(SeekBar seekBar) {
@@ -91,7 +90,6 @@ public class KitchenActivity extends Activity {
                 Log.d("SK CUCINA", String.valueOf(val)); //TODO SEND TO PHP
             }
         });
-
 
 
     }

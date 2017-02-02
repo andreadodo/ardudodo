@@ -3,17 +3,17 @@ package android.vm.ardudodo.models;
 import org.json.JSONArray;
 import org.json.JSONException;
 
+import static android.vm.ardudodo.models.Room.*;
+
 
 /**
  * Created by andrea on 31/01/17.
  */
 
-public class Bathroom extends RoomInstance{
+public class Bathroom {
     private boolean bagno, wc, lavabo, ventola;
 
-    @Override
-    public void setData(JSONArray jsonValue) {
-        //Log.d("VALUE JSON",jsonValue.toString());
+    public Bathroom(JSONArray jsonArray) {
         try {
             this.bagno = (jsonArray.getInt(BAGNO)!=0);
             this.wc = (jsonArray.getInt(WC)!=0);
@@ -22,9 +22,8 @@ public class Bathroom extends RoomInstance{
         } catch (JSONException e) {
             e.printStackTrace();
         }
-    }
 
-    public Bathroom(JSONArray jsonArray) { }
+    }
 
     public boolean getBagno() {
         return bagno;
@@ -38,10 +37,4 @@ public class Bathroom extends RoomInstance{
     public boolean getVentola() {
         return ventola;
     }
-
-   /* @Override
-    public <T extends Room> Room getInstance(JSONArray jsonArray) throws JSONException {
-        return new Bathroom(jsonArray);
-
-    }*/
 }

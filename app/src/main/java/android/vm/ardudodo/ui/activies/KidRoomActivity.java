@@ -4,9 +4,9 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.util.Log;
 import android.vm.ardudodo.R;
+import android.vm.ardudodo.controllers.KidroomController;
 import android.vm.ardudodo.controllers.Rest;
-import android.vm.ardudodo.models.KidRoom;
-import android.vm.ardudodo.models.Kitchen;
+import android.vm.ardudodo.models.Kidroom;
 import android.widget.CompoundButton;
 import android.widget.SeekBar;
 import android.widget.Switch;
@@ -18,6 +18,25 @@ import android.widget.Switch;
 public class KidRoomActivity extends Activity {
     Switch switchCameretta;
     SeekBar seekBarCameretta;
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        new KidroomController(this).fetchDataFromUdoo(0, 0,
+                new Rest.ResponseCallback<Kidroom>() {
+                    @Override
+                    public void onSuccess(Kidroom room) {
+                        switchCameretta.setChecked(room.getCameretta());
+                        seekBarCameretta.setProgress(room.getTapCameretta());
+                    }
+
+                    @Override
+                    public void onError(String message) {
+
+                    }
+                }
+        );
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,18 +73,5 @@ public class KidRoomActivity extends Activity {
                 Log.d("SK CAMERETTA", String.valueOf(val)); //TODO SEND TO PHP
             }
         });
-
-        new Rest.ResponseCallback<KidRoom>() {
-            @Override
-            public void onSuccess(KidRoom room) {
-                switchCameretta.setChecked(room.getCameretta());
-                seekBarCameretta.setProgress(room.getTapCameretta());
-            }
-
-            @Override
-            public void onError(String message) {
-
-            }
-        };
     }
 }

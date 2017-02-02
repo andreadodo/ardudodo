@@ -9,20 +9,7 @@ import org.json.JSONException;
  * Created by andrea on 01/02/17.
  */
 
-public abstract class Room <R extends Room>{
-
-/*
-    public  Room<R> getInstance(R r,JSONArray jsonArray){
-        try {
-            return r.getClass().newInstance();
-        } catch (InstantiationException e) {
-            e.printStackTrace();
-        } catch (IllegalAccessException e) {
-            e.printStackTrace();
-        }
-        return null;
-
-    }*/
+public class Room {
 
     //WEB
     public static final String URL = "http://172.16.9.150:8888/ardudodo.php";
@@ -65,5 +52,17 @@ public abstract class Room <R extends Room>{
     public static final int SS_ORA = 34;
     public static final int STOP = 35;
 
+    /*
+    public  Room<R> getInstance(R r,JSONArray jsonArray){
+        try {
+            return r.getClass().newInstance();
+        } catch (InstantiationException e) {
+            e.printStackTrace();
+        } catch (IllegalAccessException e) {
+            e.printStackTrace();
+        }
+        return null;
+
+    }*/
 
 }

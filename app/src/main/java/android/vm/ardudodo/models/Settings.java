@@ -8,12 +8,11 @@ import org.json.JSONException;
  * Created by andrea on 01/02/17.
  */
 
-public class Settings extends RoomInstance{
+public class Settings extends Room{
     private String oraGiorno, oraNotte, oraVentola, ora, data;
     private int intGiorno, intNotte,lux, i2c;
 
-    @Override
-    public void setData(JSONArray jsonValue) {
+    public Settings(JSONArray jsonArray) {
         //Log.d("VALUE JSON",jsonValue.toString());
         try {
             this.oraGiorno = jsonArray.getString(HH_GIORNO)+":"+jsonArray.getString(MM_GIORNO);
@@ -29,8 +28,6 @@ public class Settings extends RoomInstance{
             e.printStackTrace();
         }
     }
-
-    public Settings(JSONArray jsonArray) throws JSONException { }
 
     public String getOraGiorno() {
         return oraGiorno;

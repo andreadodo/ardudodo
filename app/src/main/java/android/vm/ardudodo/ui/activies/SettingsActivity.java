@@ -5,7 +5,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.vm.ardudodo.R;
 import android.vm.ardudodo.controllers.Rest;
-import android.vm.ardudodo.models.Kitchen;
+import android.vm.ardudodo.controllers.SettingsController;
 import android.vm.ardudodo.models.Settings;
 import android.widget.Button;
 import android.widget.EditText;
@@ -22,6 +22,25 @@ public class SettingsActivity extends Activity{
     TextView etLux, tvI2c, etVentola;
     SeekBar sbCorDay, sbCorNight;
     Button btRstAll, btRstKitchen, btRstBdroomDx, btRstBdroomSx, btRstKidsroom;
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        new SettingsController(this).fetchDataFromUdoo(0, 0,
+                new Rest.ResponseCallback<Settings>() {
+                    @Override
+                    public void onSuccess(Settings room) {
+                        //TODO
+                    }
+
+                    @Override
+                    public void onError(String message) {
+
+                    }
+                }
+        );
+    }
+
 
 
     @Override
@@ -43,23 +62,6 @@ public class SettingsActivity extends Activity{
         btRstBdroomDx = (Button)findViewById(R.id.bt_rst_bdroom_dx);
         btRstBdroomSx = (Button)findViewById(R.id.bt_rst_bdroom_sx);
         btRstKidsroom = (Button)findViewById(R.id.bt_rst_kidsroom);
-
-
-
-
-
-        new Rest.ResponseCallback<Settings>() {
-            @Override
-            public void onSuccess(Settings room) {
-
-            }
-
-            @Override
-            public void onError(String message) {
-
-            }
-        };
-
     }
 }
 

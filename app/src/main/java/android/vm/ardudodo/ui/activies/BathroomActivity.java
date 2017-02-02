@@ -4,13 +4,11 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.util.Log;
 import android.vm.ardudodo.R;
+import android.vm.ardudodo.controllers.BathRoomController;
 import android.vm.ardudodo.controllers.Rest;
 import android.vm.ardudodo.models.Bathroom;
-import android.vm.ardudodo.models.Kitchen;
 import android.widget.CompoundButton;
-import android.widget.SeekBar;
 import android.widget.Switch;
-import android.widget.TextView;
 
 /**
  * Created by User on 27/01/2017.
@@ -19,6 +17,26 @@ import android.widget.TextView;
 public class BathroomActivity extends Activity {
     Switch switchBagno, switchWc, swithLavabo, switchVentola;
 
+    @Override
+    protected void onStart() {
+        super.onStart();
+        new BathRoomController(this).fetchDataFromUdoo(0, 0,
+                new Rest.ResponseCallback<Bathroom>() {
+                    @Override
+                    public void onSuccess(Bathroom room) {
+                        switchBagno.setChecked(room.getBagno());
+                        switchWc.setChecked(room.getWc());
+                        swithLavabo.setChecked(room.getLavabo());
+                        switchVentola.setChecked(room.getVentola());
+                    }
+
+                    @Override
+                    public void onError(String message) {
+
+                    }
+                }
+        );
+    }
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bathroom);
@@ -59,32 +77,5 @@ public class BathroomActivity extends Activity {
                 // TODO SEND TO PHP
             }
         });
-
-        new Rest.ResponseCallback<Bathroom>() {
-            @Override
-            public void onSuccess(Bathroom room) {
-
-            }
-
-            @Override
-            public void onError(String message) {
-
-            }
-        };
-
-        new Rest.ResponseCallback<Bathroom>() {
-            @Override
-            public void onSuccess(Bathroom room) {
-                switchBagno.setChecked(room.getBagno());
-                switchWc.setChecked(room.getWc());
-                swithLavabo.setChecked(room.getLavabo());
-                switchVentola.setChecked(room.getVentola());4
-            }
-
-            @Override
-            public void onError(String message) {
-
-            }
-        };
-    }
+    };
 }

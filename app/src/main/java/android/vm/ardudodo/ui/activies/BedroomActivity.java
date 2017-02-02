@@ -4,13 +4,12 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.util.Log;
 import android.vm.ardudodo.R;
+import android.vm.ardudodo.controllers.BedroomController;
 import android.vm.ardudodo.controllers.Rest;
 import android.vm.ardudodo.models.Bedroom;
-import android.vm.ardudodo.models.Kitchen;
 import android.widget.CompoundButton;
 import android.widget.SeekBar;
 import android.widget.Switch;
-import android.widget.TextView;
 
 /**
  * Created by User on 26/01/2017.
@@ -20,9 +19,43 @@ public class BedroomActivity extends Activity {
     Switch switchLetto, switchComDx, switchComSx;
     SeekBar seekBarDx, seekBarSx;
 
+    @Override
+    protected void onStart() {
+        super.onStart();
+        new BedroomController(this).fetchDataFromUdoo(0, 0,
+                new Rest.ResponseCallback<Bedroom>() {
+                    @Override
+                    public void onSuccess(Bedroom room) {
+                        switchLetto.setChecked(room.getLetto());
+                        switchComDx.setChecked(room.getComodinoDx());
+                        switchComSx.setChecked(room.getComodinoSx());
+                        seekBarDx.setProgress(room.getTapLettoDx());
+                        seekBarSx.setProgress(room.getTapLettoSx());
+                    }
+
+                    @Override
+                    public void onError(String message) {
+
+                    }
+                }
+        );
+    }
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bigbedroom);
+
+        Rest.ResponseCallback<Bedroom> callback = new Rest.ResponseCallback<Bedroom>() {
+            @Override
+            public void onSuccess(Bedroom room) {
+
+            }
+
+            @Override
+            public void onError(String message) {
+
+            }
+        };
 
         switchLetto = (Switch) findViewById(R.id.switch_letto);
         switchComDx = (Switch) findViewById(R.id.switch_comodino_anna);
@@ -92,21 +125,5 @@ public class BedroomActivity extends Activity {
                 Log.d("SK CUCINA", String.valueOf(val)); //TODO SEND TO PHP
             }
         });
-
-        new Rest.ResponseCallback<Bedroom>() {
-            @Override
-            public void onSuccess(Bedroom room) {
-                switchLetto.setChecked(room.getLetto());
-                switchComDx.setChecked(room.getComodinoDx());
-                switchComSx.setChecked(room.getComodinoSx());
-                seekBarDx.setProgress(room.getTapLettoDx());
-                seekBarSx.setProgress(room.getTapLettoSx());
-            }
-
-            @Override
-            public void onError(String message) {
-
-            }
-        };
     }
 }

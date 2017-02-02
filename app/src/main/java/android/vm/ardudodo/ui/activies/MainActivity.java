@@ -7,6 +7,7 @@ import android.view.View;
 import android.vm.ardudodo.R;
 
 import android.widget.Button;
+import android.widget.Toast;
 
 /**
  * Created by User on 26/01/2017.
@@ -19,6 +20,9 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        Toast toast = Toast.makeText(this, "Powered by Andrea e Alessio", Toast.LENGTH_SHORT);
+        toast.show();
 
         //ID ASSOCIATION
         cucina = (Button)findViewById(R.id.cucina);
@@ -61,3 +65,11 @@ public class MainActivity extends Activity {
         });
     }
 }
+
+/*
+Context context = getApplicationContext();
+CharSequence text = ;
+
+Toast toast = Toast.makeText(this, "Hello toast!", Toast.LENGTH_SHORT);
+toast.show();
+* */

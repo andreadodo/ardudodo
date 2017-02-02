@@ -5,7 +5,6 @@ import android.content.Context;
 import android.util.Log;
 import android.vm.ardudodo.models.Kitchen;
 import android.vm.ardudodo.models.Room;
-import android.vm.ardudodo.models.RoomInstance;
 
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
@@ -23,18 +22,14 @@ import static android.vm.ardudodo.models.Room.URL;
  */
 
 
-public class Rest extends Activity {
-    Context context;
+public class Rest {
 
-    public Rest(Context c) {
-        context = c;
-    }
-
-    public interface ResponseCallback<R extends RoomInstance> {
+    public interface ResponseCallback<R> {
         void onSuccess(R room);
         void onError(String message);
     }
-
+}
+/*
     public <K extends RoomInstance> void requestUdoo(int id, int cmd, final ResponseCallback<K> callback, final Class<K> type) {
 
         //Init request queque
@@ -68,5 +63,4 @@ public class Rest extends Activity {
         // Add the request to the RequestQueue.
         queue.add(jsonRequest);
     }
-}
-
+}*/
