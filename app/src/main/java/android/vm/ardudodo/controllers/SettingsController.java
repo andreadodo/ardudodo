@@ -3,7 +3,6 @@ package android.vm.ardudodo.controllers;
 import android.app.Activity;
 import android.content.Context;
 import android.util.Log;
-import android.vm.ardudodo.models.Kitchen;
 import android.vm.ardudodo.models.Settings;
 
 import com.android.volley.RequestQueue;
@@ -13,7 +12,6 @@ import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.Volley;
 
 import org.json.JSONArray;
-import org.json.JSONException;
 
 import static android.vm.ardudodo.models.Room.URL;
 

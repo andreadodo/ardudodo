@@ -50,6 +50,6 @@
         android:text="@string/tv_paginaprincipale"
         android:layout_margin="50dp"
         android:layout_gravity="center"
-        android:textSize="25dp"/>-->
+        android:textSize="25dp"/-->
 
 </LinearLayout>

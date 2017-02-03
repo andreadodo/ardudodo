@@ -11,6 +11,7 @@ import android.widget.CompoundButton;
 import android.widget.SeekBar;
 import android.widget.Switch;
 import android.widget.TextView;
+import android.widget.Toast;
 
 /**
  * Created by Andrea on 26/01/2017.
@@ -21,26 +22,29 @@ public class KitchenActivity extends Activity {
     SeekBar seekBarCucina;
     TextView temp, umid;
 
+    KitchenController kitchen = new KitchenController(this);
+
+    Rest.ResponseCallback<Kitchen> callback = new Rest.ResponseCallback<Kitchen>() {
+        @Override
+        public void onSuccess(Kitchen room) {
+            switchCucina.setChecked(room.getCucina());
+            switchCorridoio.setChecked(room.getCorridoio());
+            seekBarCucina.setProgress(room.getTapCucina());
+            temp.setText(room.getTemperatura());
+            umid.setText(room.getUmidita());
+        }
+
+        @Override
+        public void onError(String message) {
+            Toast toast = Toast.makeText(KitchenActivity.this, message, Toast.LENGTH_LONG);
+            toast.show();
+        }
+    };
+
     @Override
     protected void onStart() {
         super.onStart();
-        new KitchenController(this).fetchDataFromUdoo(0, 0,
-                new Rest.ResponseCallback<Kitchen>() {
-                    @Override
-                    public void onSuccess(Kitchen room) {
-                        switchCucina.setChecked(room.getCucina());
-                        switchCorridoio.setChecked(room.getCorridoio());
-                        seekBarCucina.setProgress(room.getTapCucina());
-                        temp.setText(room.getTemperatura());
-                        umid.setText(room.getUmidita());
-                    }
-
-                    @Override
-                    public void onError(String message) {
-
-                    }
-                }
-        );
+        kitchen.fetchDataFromUdoo(0, 0, callback);
     }
 
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,7 +61,7 @@ public class KitchenActivity extends Activity {
             @Override
             public void onCheckedChanged(CompoundButton s, boolean isChecked) {
                 Log.d("SW CUCINA", String.valueOf(isChecked));
-                //         rest.requestUdoo(0,0, callback )TODO SEND TO PHP
+                kitchen.fetchDataFromUdoo(101, (isChecked) ? 1 : 0, callback);
             }
         });
 
@@ -65,7 +69,7 @@ public class KitchenActivity extends Activity {
             @Override
             public void onCheckedChanged(CompoundButton s, boolean isChecked) {
                 Log.d("SW CORRIDOIO", String.valueOf(isChecked));
-                // TODO SEND TO PHP
+                kitchen.fetchDataFromUdoo(103, (isChecked) ? 1 : 0, callback);
             }
         });
 
@@ -87,7 +91,8 @@ public class KitchenActivity extends Activity {
             @Override
             public void onStopTrackingTouch(SeekBar seekBar) {
                 seekBarCucina.setProgress(val);
-                Log.d("SK CUCINA", String.valueOf(val)); //TODO SEND TO PHP
+                Log.d("SK CUCINA", String.valueOf(val));
+                kitchen.fetchDataFromUdoo(213, val, callback);
             }
         });
 

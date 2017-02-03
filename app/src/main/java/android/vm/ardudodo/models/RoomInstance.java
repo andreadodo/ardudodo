@@ -1,8 +1,8 @@
-package android.vm.ardudodo.models;
+//package android.vm.ardudodo.models;
 
 import org.json.JSONArray;
 
-/**
+/*
  * Created by andrea on 01/02/17.
  */
 /*

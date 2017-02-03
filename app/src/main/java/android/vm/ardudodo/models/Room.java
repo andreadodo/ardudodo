@@ -1,10 +1,5 @@
 package android.vm.ardudodo.models;
 
-import android.vm.ardudodo.R;
-
-import org.json.JSONArray;
-import org.json.JSONException;
-
 /**
  * Created by andrea on 01/02/17.
  */
@@ -51,18 +46,4 @@ public class Room {
     public static final int MM_ORA = 33;
     public static final int SS_ORA = 34;
     public static final int STOP = 35;
-
-    /*
-    public  Room<R> getInstance(R r,JSONArray jsonArray){
-        try {
-            return r.getClass().newInstance();
-        } catch (InstantiationException e) {
-            e.printStackTrace();
-        } catch (IllegalAccessException e) {
-            e.printStackTrace();
-        }
-        return null;
-
-    }*/
-
 }
